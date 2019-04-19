@@ -38,7 +38,7 @@ const IndexPage = () => (
       <Layout>
         <div className="row">
           {extractCategories(data.github.repository.content.text).map((category, index) => (
-            <div className="col-md-3" key={`category-${index}`}>
+            <div className="col-md-3 category-wrapper" key={`category-${index}`}>
               <a className="category" href={category.url}>
                 <p>
                   <i className="fas fa-microphone"></i>
