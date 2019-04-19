@@ -7,12 +7,13 @@
 
 import React from "react"
 import PropTypes from "prop-types"
-import { StaticQuery, graphql } from "gatsby"
+import {StaticQuery, graphql} from "gatsby"
 
 import Header from "../header/header"
+import GitHubCorner from "../github-corner/git-hub-corner"
 import "./layout.scss"
 
-const Layout = ({ children }) => (
+const Layout = ({children}) => (
   <StaticQuery
     query={graphql`
       query SiteTitleQuery {
@@ -26,7 +27,8 @@ const Layout = ({ children }) => (
     render={data => (
 
       <>
-        <Header siteTitle={data.site.siteMetadata.title} />
+        <GitHubCorner/>
+        <Header siteTitle={data.site.siteMetadata.title}/>
         <div className="container">
           {children}
         </div>
