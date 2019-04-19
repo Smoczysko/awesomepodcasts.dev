@@ -1,0 +1,65 @@
+*[class^="col-md"] {
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+.col-md-* {
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+.category {
+  color: #757575 !important;
+  text-decoration: none;
+  background-clip: border-box;
+  background-color: rgb(255, 255, 255);
+  border-bottom-color: rgb(241, 242, 243);
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-image-repeat: stretch;
+  border-image-source: none;
+  border-image-width: 1;
+  border-left-color: rgb(241, 242, 243);
+  border-left-style: solid;
+  border-left-width: 1px;
+  border-right-color: rgb(241, 242, 243);
+  border-right-style: solid;
+  border-right-width: 1px;
+  border-top-color: rgb(241, 242, 243);
+  border-radius: 4px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  box-sizing: border-box;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  font-family: "FontAwesome", sans-serif;
+  font-size: 38px;
+  font-weight: 300;
+  height: 120px;
+  line-height: 28.5px;
+  min-width: 0;
+  overflow-wrap: break-word;
+  padding: 60px 32px 140px;
+  position: relative;
+  text-align: center;
+  transition-delay: 0s;
+  transition-duration: 0.5s;
+  transition-property: all;
+  transition-timing-function: ease;
+  -webkit-box-direction: normal;
+  -webkit-box-orient: vertical;
+
+  -webkit-box-shadow: 0 6px 12px -9px black;
+  -moz-box-shadow: 0 6px 12px -9px black;
+  box-shadow: 0 6px 12px -9px black;
+
+  i {
+    font-style: normal;
+    color: #50a1ff !important;
+  }
+
+  &:hover {
+    text-decoration: none;
+  }
+}

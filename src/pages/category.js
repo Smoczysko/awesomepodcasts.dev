@@ -2,24 +2,20 @@ import React from "react"
 import { StaticQuery, graphql } from "gatsby"
 
 import Layout from "../components/layout/layout"
+import SEO from "../components/seo/seo"
 import * as remark from "remark";
 
-import "./index.scss";
-
-const extractCategories = (markdown) => {
+const getCategoryName = (markdown, url) => {
   const parsed = remark().parse(markdown);
 
   const indexOfToCHeading = parsed.children.findIndex(child => child.type === 'heading' && child.children && child.children[0].value === 'Table of Contents');
 
   return parsed.children[indexOfToCHeading + 1].children
-    .filter(child => child.children[0].type === 'paragraph')
-    .map(child => ({
-      name: child.children[0].children[0].children[0].value,
-      url: child.children[0].children[0].url.substring(1)
-    }));
-};
+    .find(child => child.children[0].children[0].url.substring(1) === url)
+    .children[0].children[0].children[0].value;
+}
 
-const IndexPage = () => (
+const CategoryPage = ({ pageContext }) => (
   <StaticQuery
     query={graphql`
       {
@@ -36,21 +32,12 @@ const IndexPage = () => (
     `}
     render={data => (
       <Layout>
-        <div className="row">
-          {extractCategories(data.github.repository.content.text).map((category, index) => (
-            <div className="col-md-3" key={`category-${index}`}>
-              <a className="category" href={category.url}>
-                <p>
-                  <i className="fas fa-microphone"></i>
-                </p>
-                <h5>{category.name}</h5>
-              </a>
-            </div>
-          ))}
-        </div>
+        <SEO title="Category" keywords={[`gatsby`, `application`, `react`]} />
+        <h1>Hi on sub page</h1>
+        { getCategoryName(data.github.repository.content.text, pageContext.category) }
       </Layout>
     )}
   />
 )
 
-export default IndexPage
+export default CategoryPage
