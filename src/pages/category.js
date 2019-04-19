@@ -10,9 +10,10 @@ const getCategoryName = (markdown, url) => {
 
   const indexOfToCHeading = parsed.children.findIndex(child => child.type === 'heading' && child.children && child.children[0].value === 'Table of Contents');
 
-  return parsed.children[indexOfToCHeading + 1].children
-    .find(child => child.children[0].children[0].url.substring(1) === url)
-    .children[0].children[0].children[0].value;
+  let tocEntry = parsed.children[indexOfToCHeading + 1].children
+    .find(child => child.children[0].children[0].url.substring(1) === url);
+
+  return tocEntry ? tocEntry.children[0].children[0].children[0].value : '';
 }
 
 const CategoryPage = ({ pageContext }) => (

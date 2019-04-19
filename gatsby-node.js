@@ -11,7 +11,8 @@ const extractCategories = (markdown) => {
     .map(child => ({
       name: child.children[0].children[0].children[0].value,
       url: child.children[0].children[0].url.substring(1)
-    }));
+    }))
+    .filter(category => !!category.name && !!category.url && category.url !== 'undefined');
 }
 
 exports.createPages = ({ graphql, actions }) => {
