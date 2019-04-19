@@ -1,6 +1,6 @@
-import React from "react"
+import React from "react";
 
-import logo from '../../images/logo.svg';
+import logo from "../../images/logo.svg";
 
 import "./header.scss";
 
@@ -9,7 +9,7 @@ const Header = () => (
     <div className="container">
       <div className="row" id="header-logo">
         <a href="/">
-          <img src={logo} alt="Awesome Podcasts"/>
+          <img src={logo} alt="Awesome Podcasts" />
         </a>
       </div>
       <div className="row">
@@ -19,6 +19,6 @@ const Header = () => (
       </div>
     </div>
   </header>
-)
+);
 
-export default Header
+export default Header;

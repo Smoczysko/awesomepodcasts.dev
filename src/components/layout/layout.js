@@ -5,15 +5,15 @@
  * See: https://www.gatsbyjs.org/docs/static-query/
  */
 
-import React from "react"
-import PropTypes from "prop-types"
-import {StaticQuery, graphql} from "gatsby"
+import React from "react";
+import PropTypes from "prop-types";
+import { StaticQuery, graphql } from "gatsby";
 
-import Header from "../header/header"
-import GitHubCorner from "../github-corner/git-hub-corner"
-import "./layout.scss"
+import Header from "../header/header";
+import GitHubCorner from "../github-corner/git-hub-corner";
+import "./layout.scss";
 
-const Layout = ({children}) => (
+const Layout = ({ children }) => (
   <StaticQuery
     query={graphql`
       query SiteTitleQuery {
@@ -25,20 +25,17 @@ const Layout = ({children}) => (
       }
     `}
     render={data => (
-
       <>
-        <GitHubCorner/>
-        <Header siteTitle={data.site.siteMetadata.title}/>
-        <div className="container">
-          {children}
-        </div>
+        <GitHubCorner />
+        <Header siteTitle={data.site.siteMetadata.title} />
+        <div className="container">{children}</div>
       </>
     )}
   />
-)
+);
 
 Layout.propTypes = {
-  children: PropTypes.node.isRequired,
-}
+  children: PropTypes.node.isRequired
+};
 
-export default Layout
+export default Layout;
